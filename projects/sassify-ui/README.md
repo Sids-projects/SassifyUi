@@ -1,4 +1,4 @@
-![Sassify-UI Logo](https://github.com/Sids-projects/SassifyUi/blob/main/src/assets/SassifyUi-logo.svg)
+![Sassify-UI Logo](https://github.com/Sids-projects/SassifyUi/blob/main/src/assets/logo.svg)
 
 # SassifyUi
 
