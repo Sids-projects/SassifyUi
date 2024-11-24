@@ -1,0 +1,26 @@
+<main class="app-components">
+  <section *ngIf="!hasChildRoute">
+    <div class="app-desc">
+      <h2>Templates</h2>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Optio expedita
+        officiis ipsa alias voluptatum sequi laudantium nam, ipsum culpa
+        delectus!
+      </p>
+    </div>
+    <div class="templates-list grid-02">
+      <section
+        class="app-card"
+        *ngFor="let data of componentList.uiComponents"
+        [routerLink]="data.routerLink"
+      >
+        <div class="card-body">
+          <img src="" [alt]="data.displayName" />
+          <h3>{{ data.displayName }}</h3>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <router-outlet *ngIf="hasChildRoute"></router-outlet>
+</main>

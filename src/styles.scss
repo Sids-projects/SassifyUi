@@ -1,5 +1,13 @@
-// @import "./../node_modules/@dev.spot/sassify-ui/src/lib/scss/main.scss";
+@import "./../node_modules/@dev.spot/sassify-ui/src/lib/scss/main.scss";
 @import "./../projects/sassify-ui/src/lib/scss/main.scss";
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
+
+@font-face {
+  font-family: "Swung-note";
+  src: url("./assets/Font/SwungNote/SwungNote.otf") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+}
 
 @font-face {
   font-family: "Pretty-neat";
@@ -15,10 +23,26 @@
   font-style: normal;
 }
 
+:root {
+  --theme-colour: #ffe266;
+  --sub-theme-colour: #433dc3;
+  --font-colour: #565656;
+
+  // Package: Table
+  // --tbl-bdr: 1.5px solid #cfb74f;
+  // --th-font-weight: 500;
+  // --th-clr-bg: #ffe266;
+  // --td-clr-bg: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+html {
+  font-size: 10px;
 }
 
 html,
@@ -33,7 +57,8 @@ body {
 body {
   font-family: "Pretty-neat", sans-serif !important;
   font-weight: normal !important;
-  color: #565656;
+  color: var(--font-colour);
+  font-size: 1.6rem;
 }
 
 .mat-typography h1,
@@ -48,42 +73,73 @@ body {
 }
 
 .app {
-  height: 100vh;
-  display: flex;
+  display: grid;
+  grid-template-rows: 80px calc(100vh - 80px);
   flex-direction: column;
-  justify-content: space-between;
   overflow: hidden;
 
   .app-header {
+    height: 80px;
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    gap: 20px;
-    padding: 20px;
+    gap: 16px;
+    padding: 10px;
+    position: sticky;
+    top: 0;
 
-    a {
-      width: 100px;
+    .container-01 {
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 16px;
-      text-decoration: none;
-      color: #565656;
-      padding: 6px 0;
-      border-radius: 4px;
+      gap: 10px;
+      padding: 10px 32px 14px 34px;
+      border-radius: 6px;
+
+      a {
+        font-family: "Sour Gummy", sans-serif;
+        width: 120px;
+        font-size: 16px;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        padding: 4px 0;
+        z-index: 10;
+      }
+
+      .active {
+        background-color: white;
+        border-radius: 6px;
+      }
     }
 
-    img {
-      width: 50px;
-      margin: 0 20px;
+    .container-02 {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 10px 10px 18px;
+      border-radius: 6px;
+
+      p {
+        cursor: pointer;
+        z-index: 10;
+        font-size: 18px;
+
+        span {
+          color: black;
+        }
+      }
     }
   }
 
   .app-home {
+    height: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0 20px;
 
     .logo {
       min-width: 200px;
@@ -92,78 +148,348 @@ body {
     }
 
     .home-desc {
-      width: 650px;
+      min-width: 350px;
+      width: 100%;
+      max-width: 650px;
       font-size: 16px;
       margin-top: 24px;
       text-align: center;
       line-height: 24px;
     }
 
-    .install-kit {
-      width: 400px;
-      padding: 14px 20px;
-      border-radius: 6px;
-      margin-top: 28px;
+    .app-guide {
+      min-width: 300px;
+      width: 100%;
+      max-width: 500px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 32px;
 
-      p {
-        font-weight: bold;
+      button {
+        width: 60px;
+        height: 60px;
+        border-radius: 4px;
+        border: none;
+        padding: 0 0 4px 4px;
+
+        span {
+          font-size: 30px !important;
+          color: var(--sub-theme-colour);
+        }
+      }
+    }
+
+    .install-kit {
+      width: 100%;
+      max-width: 380px;
+      height: 60px;
+      padding: 14px 20px 16px 22px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+
+      h3 {
+        font-family: "Pretty-neat";
+        font-size: 18px;
+        color: var(--sub-theme-colour);
       }
 
       .material-symbols-outlined {
-        font-size: 28px;
+        font-size: 24px;
+        color: var(--sub-theme-colour);
+
         &:hover {
           font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24 !important;
         }
       }
     }
+  }
 
-    .app-version {
-      width: 400px;
-      text-align: right;
-      margin-top: 10px;
-      font-weight: bold;
+  .app-components {
+    height: 100%;
+    padding: 16px 30px 30px 30px;
+    overflow-y: scroll;
+
+    .app-desc {
+      padding: 0 0 30px 0;
+
+      h2 {
+        font-family: "Sour Gummy", sans-serif;
+        text-transform: uppercase;
+        font-size: 24px;
+        margin-bottom: 4px;
+      }
+    }
+
+    .app-card {
+      box-shadow: rgba(0, 0, 0, 0.058) 0px 6px 24px 0px,
+        rgba(0, 0, 0, 0.08) 0px 0px 0px 1.2px;
+      background-color: white;
+      border-radius: 6px;
+      height: fit-content;
+
+      .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 20px 0 20px;
+
+        h3 {
+          font-family: "Sour Gummy", sans-serif;
+          text-transform: uppercase;
+          font-size: 20px;
+          font-weight: 400;
+        }
+
+        .arrows {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+
+          span {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 4px;
+            background-color: var(--theme-colour);
+            font-size: 20px;
+          }
+
+          .selected {
+            background-color: #e5e5e5 !important;
+            color: #949494;
+
+            &:before {
+              border: 1.8px solid #c4c4c4;
+              top: -4px;
+              left: 1px;
+            }
+          }
+        }
+      }
+
+      .card-body {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 16px 20px 20px 20px;
+
+        hr {
+          margin: 40px 0;
+        }
+      }
+
+      .card-footer {
+        height: 50px;
+      }
+    }
+
+    .card-expand {
+      grid-column: span 2;
     }
   }
 
-  .app-footer {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(250px, 380px));
-    justify-content: space-evenly;
-    gap: 20px;
-    transform: translateY(24px);
+  .component-list {
+    .app-card {
+      padding: 0 !important;
+      overflow: hidden;
+    }
 
-    .desc-cards {
-      padding: 12px 24px 28px 24px;
-      border-radius: 10px;
-      transition: transform 0.2s;
+    .card-body {
+      padding: 0 !important;
 
-      h3 {
-        font-family: "Pretty-neat", sans-serif !important;
-        font-size: 18px;
+      .comp-img {
+        border-bottom: 2px solid rgb(241, 241, 241);
+        background-color: #fafafa;
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .button-img {
+          width: 140px;
+        }
+
+        .dropdown-img {
+          width: 230px;
+        }
+
+        .card-img {
+          width: 250px;
+        }
+
+        .inputs-img {
+          width: 250px;
+        }
+
+        .table-img {
+          width: 250px;
+        }
       }
 
-      &:hover {
-        transform: translateY(-6px);
+      .comp-desc {
+        padding: 20px;
+
+        h3 {
+          font-family: "Sour Gummy", sans-serif;
+          font-size: 20px;
+          text-transform: uppercase;
+          margin-bottom: 6px;
+        }
+
+        p {
+          font-size: 14px;
+          color: #919191;
+        }
+      }
+    }
+  }
+
+  .app-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 1.4rem;
+    position: fixed;
+    bottom: 1.4rem;
+    right: 2.4rem;
+    z-index: 99;
+
+    .links {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+      padding: 16px;
+      border-radius: 6px;
+
+      .desc {
+        min-width: 250px;
+        max-width: 400px;
+      }
+
+      a {
+        width: 120px;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        text-align: right;
+        font-size: 14px;
+        font-weight: 500;
+        text-decoration: none;
+        color: var(--font-colour);
+        padding: 8px 0 8px 0;
+        border-radius: 4px;
+        z-index: 100;
+      }
+
+      .selected {
+        background-color: #ffffff;
+        padding-right: 10px !important;
+      }
+    }
+
+    .logo {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border-radius: 0.2rem;
+      border-radius: 4px;
+
+      img {
+        width: 38px;
       }
     }
   }
 }
 
+.grid-02 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.grid-04 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
 .selected {
-  background-color: #ffe266;
+  background-color: var(--theme-colour);
   position: relative;
 
   &:before {
     content: "";
-    border: 1.8px solid #433dc3;
+    border: 1.8px solid var(--sub-theme-colour);
     width: 100%;
     height: 100%;
     position: absolute;
     top: -6px;
     left: 4px;
     border-radius: inherit;
+  }
+}
+
+// Components
+.comp-title {
+  font-family: "Sour Gummy", sans-serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+  margin-bottom: 20px !important;
+}
+
+.inbuild-clrs {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  p {
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+  }
+
+  .blue {
+    border: 4px solid #2b66fe;
+    background-color: #2b66fe;
+  }
+
+  .yellow {
+    border: 4px solid #ffbd02;
+    background-color: #ffbd02;
+  }
+
+  .green {
+    border: 4px solid #02bbbd;
+    background-color: #02bbbd;
+  }
+
+  .orange {
+    border: 4px solid #ff7c4b;
+    background-color: #ff7c4b;
+  }
+
+  .violet {
+    border: 4px solid #923ffb;
+    background-color: #923ffb;
+  }
+
+  .active-clr {
+    background-color: white;
   }
 }

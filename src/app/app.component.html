@@ -1,36 +1,55 @@
 <main class="app">
-  <header class="app-header">
-    <a routerLink="Home">Home</a>
-    <a routerLink="Component" routerLinkActive="selected">Components</a>
-    <img src="./../assets/logo-vector.svg" alt="Product Logo" />
-    <a routerLink="Templates" routerLinkActive="selected">Templates</a>
-    <a href="">Portfolio</a>
-  </header>
-  <section class="app-home">
-    <img src="./assets/logo.svg" class="logo" alt="SassifyUi Logo" />
-    <p class="home-desc">
-      A sleek, customisable SCSS-based UI toolkit for rapid and responsive
-      Angular development. Built for flexibility and ease of use, empowering
-      developers to create beautiful UIs effortlessly.
-    </p>
-    <div class="install-kit selected">
-      <div>
-        <p>Installation Kit</p>
-        <h3>npm i &#64;dev.spot/sassify-ui</h3>
+  <nav class="app-header">
+    <div class="container-01 selected">
+      <a [ngClass]="appHeaderProp === '' ? 'active' : ''">Home</a>
+      <a routerLink="UiCompsRouting" routerLinkActive="active">Components</a>
+      <a routerLink="TempSetRouting" routerLinkActive="active">Templates</a>
+    </div>
+    <div class="container-02 selected">
+      <p><span class="material-symbols-outlined"> search </span></p>
+    </div>
+  </nav>
+
+  <section class="app-body">
+    <section class="app-home" *ngIf="appHeaderProp === ''">
+      <img src="./assets/logo.svg" class="logo" alt="SassifyUi Logo" />
+      <p class="home-desc">
+        A sleek, customisable SCSS-based UI toolkit for rapid and responsive
+        Angular development. Built for flexibility and ease of use, empowering
+        developers to create beautiful UIs effortlessly.
+      </p>
+      <div class="app-guide">
+        <div class="install-kit selected">
+          <span class="material-symbols-outlined"> file_copy </span>
+          <h3>npm i &#64;dev.spot/sassify-ui</h3>
+        </div>
+        <button
+          class="selected"
+          routerLink="UiCompsRouting"
+          routerLinkActive="active"
+        >
+          <span class="material-symbols-outlined"> menu_book </span>
+        </button>
       </div>
-      <span class="material-symbols-outlined"> file_copy </span>
-    </div>
-    <p class="app-version">v0.1</p>
+    </section>
+    <router-outlet></router-outlet>
   </section>
-  <footer class="app-footer">
-    <div class="desc-cards selected">
-      <h3>Components</h3>
+
+  <nav class="app-nav">
+    <div
+      class="links selected"
+      [ngStyle]="{ display: showNavLinks ? 'flex' : 'none' }"
+    >
+      <ng-container *ngIf="appHeaderProp === ''">
+        <p class="desc">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam
+          aut consequatur quam tempore omnis libero, quae sunt blanditiis cum
+          iusto.
+        </p>
+      </ng-container>
     </div>
-    <div class="desc-cards selected">
-      <h3>Templates</h3>
+    <div class="logo selected" (click)="navLinksFn()">
+      <img src="./assets/logo-vector.svg" alt="Product Logo" />
     </div>
-    <div class="desc-cards selected">
-      <h3>Contact</h3>
-    </div>
-  </footer>
+  </nav>
 </main>

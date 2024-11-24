@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ComponentsComponent } from './screens/components/components.component';
-import { TemplatesComponent } from './screens/templates/templates.component';
 
 const routes: Routes = [
-  { path: 'Component', component: ComponentsComponent },
-  { path: 'Templates', component: TemplatesComponent },
+  // Modules
+  {
+    path: 'UiCompsModule',
+    loadChildren: () =>
+      import('./ui-comps/ui-comps.module').then((m) => m.UiCompsModule),
+  },
+  {
+    path: 'TempSetModule',
+    loadChildren: () =>
+      import('./template-set/template-set.module').then(
+        (m) => m.TemplateSetModule
+      ),
+  },
 ];
 
 @NgModule({
