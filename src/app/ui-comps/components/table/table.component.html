@@ -1,11 +1,11 @@
 <main>
   <h2 class="comp-title">Table</h2>
 
-  <section class="grid-02">
+  <section class="">
     <!-- Regular Table -->
     <section class="app-card card-expand">
       <div class="card-header">
-        <h3>Regular Table</h3>
+        <h3>Regular</h3>
       </div>
       <div class="card-body">
         <div>
@@ -172,6 +172,10 @@
               getInBuildClr === 'violet' ? 'violet active-clr' : 'violet'
             "
             (click)="inBuildClrs('violet')"
+          ></p>
+          <p
+            [class]="getInBuildClr === 'gray' ? 'gray active-clr' : 'gray'"
+            (click)="inBuildClrs('gray')"
           ></p>
         </div>
       </div>

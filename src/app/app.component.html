@@ -1,9 +1,18 @@
 <main class="app">
   <nav class="app-header">
     <div class="container-01 selected">
-      <a [ngClass]="appHeaderProp === '' ? 'active' : ''">Home</a>
-      <a routerLink="UiCompsRouting" routerLinkActive="active">Components</a>
-      <a routerLink="TempSetRouting" routerLinkActive="active">Templates</a>
+      <a routerLink="" [ngClass]="appHeaderProp === '' ? 'active' : ''"
+        ><span class="material-symbols-outlined"> home </span>
+        <span>Home</span></a
+      >
+      <a routerLink="UiCompsRouting" routerLinkActive="active"
+        ><span class="material-symbols-outlined"> category </span>
+        <span>Components</span></a
+      >
+      <a routerLink="TempSetRouting" routerLinkActive="active"
+        ><span class="material-symbols-outlined"> space_dashboard </span>
+        <span>Templates</span></a
+      >
     </div>
     <div class="container-02 selected">
       <p><span class="material-symbols-outlined"> search </span></p>
