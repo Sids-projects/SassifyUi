@@ -7,7 +7,7 @@
   $font: var(--btn-font-clr)
 ) {
   border: 1.5px solid $clr01;
-  background-color: $clr02;
+  background-image: linear-gradient($clr02, $clr01);
   color: $font;
   min-width: 38px;
   max-width: fit-content;
@@ -63,6 +63,7 @@
   $font: var(--btn-font-clr)
 ) {
   border: 1.5px solid $clr01;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.089);
   background-color: transparent;
   color: $font;
   min-width: 38px;
@@ -121,6 +122,7 @@
   padding: 0 10px 0 0 !important;
   border: 1.5px solid $clr01;
   background-color: $clr02;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.082);
   color: $font;
   min-width: 38px;
   max-width: fit-content;
@@ -150,6 +152,7 @@
 
   .btn-icon {
     border-right: 1.5px solid $clr01;
+    box-shadow: 1px 0 4px rgba(0, 0, 0, 0.082);
     background-color: $clr01;
     color: $font;
     height: 38px;
@@ -160,7 +163,7 @@
     align-items: center;
     justify-content: center;
     font-size: 22px;
-    border-radius: 6px 0 0 6px;
+    border-radius: 4px 0 0 4px;
   }
 }
 

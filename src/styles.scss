@@ -1,4 +1,4 @@
-@import "./../node_modules/@dev.spot/sassify-ui/src/lib/scss/main.scss";
+// @import "./../node_modules/@dev.spot/sassify-ui/src/lib/scss/main.scss";
 @import "./../projects/sassify-ui/src/lib/scss/main.scss";
 @import url("https://fonts.googleapis.com/css2?family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap");
 
@@ -74,14 +74,13 @@ body {
 
 .app {
   display: grid;
-  grid-template-rows: 80px calc(100vh - 80px);
+  grid-template-rows: 90px calc(100vh - 90px);
   flex-direction: column;
   overflow: hidden;
 
   .app-header {
-    height: 80px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     gap: 16px;
     padding: 10px;
@@ -109,6 +108,11 @@ body {
         text-transform: uppercase;
         padding: 4px 0;
         z-index: 10;
+        transition: scale 0.1s;
+
+        &:active {
+          scale: 0.9;
+        }
       }
 
       .active {
@@ -124,7 +128,7 @@ body {
       gap: 20px;
       padding: 10px 10px 10px 18px;
       border-radius: 6px;
-      margin-bottom: 4px;
+      margin-bottom: 2px;
 
       p {
         cursor: pointer;
@@ -299,7 +303,7 @@ body {
       .card-body {
         display: flex;
         flex-direction: column;
-        gap: 20px;
+        // gap: 20px;
         padding: 16px 20px 20px 20px;
 
         hr {
@@ -321,6 +325,15 @@ body {
     .app-card {
       padding: 0 !important;
       overflow: hidden;
+      transition: scale 0.2s;
+
+      &:hover {
+        scale: 1.01;
+      }
+
+      &:active {
+        scale: 0.9;
+      }
     }
 
     .card-body {
@@ -446,6 +459,16 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
+}
+
+.grid-auto-adjust {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, auto));
+  gap: 30px;
+}
+
+.margin-t {
+  margin-top: 40px !important;
 }
 
 @media only screen and (max-width: 850px) {

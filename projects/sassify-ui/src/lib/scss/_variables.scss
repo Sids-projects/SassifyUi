@@ -9,41 +9,46 @@
   --orange-dark-clr: #ff591d;
   --blue-dark-clr: #0f55ea;
   --violet-dark-clr: #7f37dd;
-  --gray-dark-clr: #d1d1d1;
+  --gray-dark-clr: #9f9f9f;
   // Medium
   --yellow-medium-clr: #ffbd02;
   --green-medium-clr: #02bbbd;
   --orange-medium-clr: #ff7c4b;
-  --blue-medium-clr: #2b66fe;
-  --violet-medium-clr: #923ffb;
-  --gray-medium-clr: #ebebeb;
+  --blue-medium-clr: #3971ff;
+  --violet-medium-clr: #9e54ff;
+  --gray-medium-clr: #bababa;
   // Light
   --yellow-light-clr: #fbd97a;
   --green-light-clr: #8ad2d3;
   --orange-light-clr: #f6bc9a;
   --blue-light-clr: #b5e1ff;
   --violet-light-clr: #caa7ff;
-  --gray-light-clr: #dbdbdb;
+  --gray-light-clr: #e5e5e5;
   // Font
   --yellow-font-clr: #ffffff;
   --green-font-clr: #ffffff;
   --orange-font-clr: #ffffff;
   --blue-font-clr: #ffffff;
   --violet-font-clr: #ffffff;
-  --gray-font-clr: #898989;
+  --gray-font-clr: white;
 
   // Table
-  --tbl-dark-clr: #d1d1d1; // Dark
-  --tbl-medium-clr: #ebebeb; // Medium
-  --tbl-light-clr: #dbdbdb; // Light
-  --tbl-font-clr: #898989; // Font
+  --tbl-dark-clr: #d1d1d1;
+  --tbl-medium-clr: #ebebeb;
+  --tbl-light-clr: #dbdbdb;
+  --tbl-font-clr: #898989;
   --th-font-weight: 400;
 
   // Button
-  --btn-dark-clr: #d1d1d1; // Dark
-  --btn-medium-clr: #ebebeb; // Medium
-  --btn-light-clr: #dbdbdb; // Light
-  --btn-font-clr: #898989; // Font
+  --btn-dark-clr: #dfdfdf;
+  --btn-medium-clr: #f8f8f8;
+  --btn-light-clr: #dbdbdb;
+  --btn-font-clr: #898989;
+
+  // Card
+  --card-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  --card-width: 100%;
+  --card-fixed-width: 400px;
 }
 
 // In-Build Colours

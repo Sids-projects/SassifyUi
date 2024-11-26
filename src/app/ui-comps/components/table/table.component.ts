@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { SharedService } from '../../../shared.service';
 import { Table } from './../../../../../projects/sassify-ui/src/lib/ts/table';
+// import { Table } from '@dev.spot/sassify-ui';
 
 @Component({
   selector: 'app-table',
