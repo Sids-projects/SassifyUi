@@ -74,7 +74,7 @@ body {
 
 .app {
   display: grid;
-  grid-template-rows: 90px calc(100vh - 90px);
+  grid-template-rows: 100px calc(100vh - 100px);
   flex-direction: column;
   overflow: hidden;
 
@@ -87,13 +87,52 @@ body {
     position: sticky;
     top: 0;
 
+    .selected {
+      &:before {
+        background-color: #fffcf2;
+      }
+    }
+
     .container-01 {
+      height: 54px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      padding: 10px 20px 14px 20px;
+      padding: 0 20px 10px 20px;
       border-radius: 6px;
+
+      .app-links {
+        max-width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        overflow-x: auto;
+        white-space: nowrap;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        scroll-behavior: smooth;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+
+        .links-list {
+          display: inline-flex;
+        }
+      }
+
+      .scroll-arrow {
+        background-color: rgba(255, 255, 255, 0.928);
+        border-radius: 6px;
+        cursor: pointer;
+        z-index: 10;
+        transition: scale 0.1s;
+
+        &:active {
+          scale: 0.8;
+        }
+      }
 
       a {
         font-family: "Sour Gummy", sans-serif;
@@ -115,20 +154,28 @@ body {
         }
       }
 
+      p {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+      }
+
       .active {
-        background-color: white;
+        background-color: var(--theme-colour);
         border-radius: 6px;
       }
     }
 
     .container-02 {
+      width: 54px;
+      height: 54px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 20px;
-      padding: 10px 10px 10px 18px;
+      padding: 0 0 10px 10px;
       border-radius: 6px;
-      margin-bottom: 2px;
 
       p {
         cursor: pointer;
@@ -138,6 +185,11 @@ body {
         span {
           color: black;
         }
+      }
+
+      img {
+        z-index: 10;
+        width: 38px;
       }
     }
   }
@@ -159,17 +211,18 @@ body {
   }
 
   .app-home {
-    height: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 0 20px;
+    position: relative;
 
     .logo {
       min-width: 200px;
       width: 100%;
-      max-width: 400px;
+      max-width: 410px;
     }
 
     .home-desc {
@@ -183,60 +236,174 @@ body {
     }
 
     .app-guide {
-      min-width: 300px;
+      min-width: 450px;
       width: 100%;
-      max-width: 500px;
+      max-width: fit-content;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 20px;
-      margin-top: 32px;
+      gap: 24px;
+      margin-top: 40px;
+      margin-bottom: 70px;
 
-      button {
-        width: 60px;
-        height: 60px;
-        border-radius: 4px;
-        border: none;
-        padding: 0 0 4px 4px;
+      .selected {
+        color: var(--font-colour);
 
-        span {
-          font-size: 30px !important;
-          color: var(--sub-theme-colour);
+        .material-symbols-outlined,
+        h3 {
+          z-index: 10;
+        }
+
+        &:before {
+          background-color: #fffcf2;
+        }
+      }
+
+      .install-kit {
+        width: 100%;
+        height: 80px;
+        padding: 8px 20px 20px 22px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+
+        small {
+          font-family: "Sour Gummy", sans-serif;
+          font-size: 14px;
+          text-transform: uppercase;
+          color: #e2bc10;
+        }
+
+        div,
+        small {
+          z-index: 10;
+        }
+
+        div {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+        }
+
+        h3 {
+          font-family: "Sour Gummy", sans-serif;
+          font-size: 18px;
+        }
+
+        .material-symbols-outlined {
+          font-size: 34px;
+          cursor: pointer;
+        }
+      }
+
+      .app-btns {
+        width: 100%;
+        display: flex;
+        gap: 20px;
+
+        .selected {
+          &::before {
+            background-color: #fffcf2;
+          }
+        }
+
+        button {
+          width: 100%;
+          height: 50px;
+          border-radius: 6px;
+          border: none;
+          display: flex;
+          align-items: center;
+          justify-content: flex-start;
+          gap: 8px;
+          padding: 0 20px 10px 20px;
+          font-family: "Sour Gummy", sans-serif;
+
+          span {
+            z-index: 10;
+            color: #565656;
+          }
+
+          .material-symbols-outlined {
+            font-size: 30px !important;
+          }
+
+          span {
+            &:nth-child(2) {
+              font-size: 16px;
+              text-transform: uppercase;
+            }
+          }
         }
       }
     }
 
-    .install-kit {
-      width: 100%;
-      max-width: 380px;
+    .selected {
+      &:before {
+        background-color: #fffcf2;
+      }
+    }
+
+    .home-shape-01 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px;
       height: 60px;
-      padding: 14px 20px 16px 22px;
-      border-radius: 6px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
-      justify-content: flex-start;
-      gap: 10px;
+      justify-content: center;
+      transform: translate(120px, 40px) rotate(20deg);
+    }
 
-      h3 {
-        font-family: "Pretty-neat";
-        font-size: 18px;
-        color: var(--sub-theme-colour);
-      }
+    .home-shape-02 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-30px, -50px) rotate(-20deg);
+    }
 
-      .material-symbols-outlined {
-        font-size: 24px;
-        color: var(--sub-theme-colour);
+    .home-shape-03 {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(20px, 70px) rotate(-20deg);
+    }
 
-        &:hover {
-          font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24 !important;
-        }
-      }
+    .home-shape-04 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(-150px, 20px) rotate(-20deg);
     }
   }
 
   .app-components {
     height: 100%;
-    padding: 16px 30px 30px 30px;
+    padding: 8px 30px 30px 30px;
     overflow-y: scroll;
 
     .app-desc {
@@ -318,6 +485,10 @@ body {
 
     .card-expand {
       grid-column: span 2;
+    }
+
+    .card-fit-content {
+      max-width: fit-content;
     }
   }
 
@@ -485,11 +656,11 @@ body {
 
   &:before {
     content: "";
-    border: 1.8px solid var(--sub-theme-colour);
+    border: 2px solid var(--sub-theme-colour);
     width: 100%;
     height: 100%;
     position: absolute;
-    top: -6px;
+    top: -8px;
     left: 4px;
     border-radius: inherit;
   }

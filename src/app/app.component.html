@@ -1,21 +1,67 @@
 <main class="app">
   <nav class="app-header">
     <div class="container-01 selected">
-      <a routerLink="" [ngClass]="appHeaderProp === '' ? 'active' : ''"
-        ><span class="material-symbols-outlined"> home </span>
-        <span>Home</span></a
+      <ng-container *ngIf="appSubHeaderProp === undefined">
+        <a routerLink="" [ngClass]="appHeaderProp === '' ? 'active' : ''"
+          ><span class="material-symbols-outlined"> home </span>
+          <span>Home</span></a
+        >
+        <a routerLink="UiCompsRouting" routerLinkActive="active"
+          ><span class="material-symbols-outlined"> category </span>
+          <span>Components</span></a
+        >
+        <a routerLink="TempSetRouting" routerLinkActive="active"
+          ><span class="material-symbols-outlined"> space_dashboard </span>
+          <span>Templates</span></a
+        >
+      </ng-container>
+      <p
+        *ngIf="appSubHeaderProp !== undefined"
+        class="scroll-arrow"
+        (click)="scrollLeft()"
       >
-      <a routerLink="UiCompsRouting" routerLinkActive="active"
-        ><span class="material-symbols-outlined"> category </span>
-        <span>Components</span></a
+        <span class="material-symbols-outlined"> chevron_left </span>
+      </p>
+      <div *ngIf="appSubHeaderProp !== undefined" class="app-links" #scrollArea>
+        <div *ngIf="appHeaderProp === 'UiCompsRouting'" class="links-list">
+          <a routerLink="UiCompsRouting/Button-Route" routerLinkActive="active">
+            <span class="material-symbols-outlined"> buttons_alt </span>
+            <span>Button</span>
+          </a>
+          <a routerLink="UiCompsRouting/Card-Route" routerLinkActive="active">
+            <span class="material-symbols-outlined"> dashboard </span>
+            <span>Card</span>
+          </a>
+          <a
+            routerLink="UiCompsRouting/Dropdown-Route"
+            routerLinkActive="active"
+          >
+            <span class="material-symbols-outlined"> dropdown </span>
+            <span>Dropdown</span>
+          </a>
+          <a routerLink="UiCompsRouting/Inputs-Route" routerLinkActive="active">
+            <span class="material-symbols-outlined"> draw </span>
+            <span>Inputs</span>
+          </a>
+          <a routerLink="UiCompsRouting/Table-Route" routerLinkActive="active">
+            <span class="material-symbols-outlined"> table </span>
+            <span>Table</span>
+          </a>
+        </div>
+      </div>
+      <p
+        *ngIf="appSubHeaderProp !== undefined"
+        class="scroll-arrow"
+        (click)="scrollRight()"
       >
-      <a routerLink="TempSetRouting" routerLinkActive="active"
-        ><span class="material-symbols-outlined"> space_dashboard </span>
-        <span>Templates</span></a
-      >
+        <span class="material-symbols-outlined"> chevron_right </span>
+      </p>
     </div>
     <div class="container-02 selected">
       <p><span class="material-symbols-outlined"> search </span></p>
+    </div>
+    <div class="container-02 selected">
+      <img src="./assets/logo-vector.svg" alt="Product Logo" />
     </div>
   </nav>
 
@@ -28,23 +74,42 @@
         developers to create beautiful UIs effortlessly.
       </p>
       <div class="app-guide">
-        <div class="install-kit selected">
-          <span class="material-symbols-outlined"> file_copy </span>
-          <h3>npm i &#64;dev.spot/sassify-ui</h3>
+        <div class="app-btns">
+          <button
+            class="selected"
+            routerLink="UiCompsRouting"
+            routerLinkActive="active"
+          >
+            <span class="material-symbols-outlined"> book </span>
+            <span>Read Docs</span>
+          </button>
+          <button
+            class="selected"
+            routerLink="UiCompsRouting"
+            routerLinkActive="active"
+          >
+            <span class="material-symbols-outlined"> draw </span>
+            <span>View Editor</span>
+          </button>
         </div>
-        <button
-          class="selected"
-          routerLink="UiCompsRouting"
-          routerLinkActive="active"
-        >
-          <span class="material-symbols-outlined"> menu_book </span>
-        </button>
+        <div class="install-kit selected">
+          <div>
+            <small>Installation Kit</small>
+            <h3>npm i &#64;dev.spot/sassify-ui</h3>
+          </div>
+          <span class="material-symbols-outlined"> content_paste </span>
+        </div>
       </div>
+      <!-- Shapes -->
+      <div class="home-shape-01 selected"></div>
+      <div class="home-shape-02 selected"></div>
+      <div class="home-shape-03 selected"></div>
+      <div class="home-shape-04 selected"></div>
     </section>
     <router-outlet></router-outlet>
   </section>
 
-  <nav class="app-nav">
+  <!-- <nav class="app-nav">
     <div
       class="links selected"
       [ngStyle]="{ display: showNavLinks ? 'flex' : 'none' }"
@@ -60,5 +125,5 @@
     <div class="logo selected" (click)="navLinksFn()">
       <img src="./assets/logo-vector.svg" alt="Product Logo" />
     </div>
-  </nav>
+  </nav> -->
 </main>
