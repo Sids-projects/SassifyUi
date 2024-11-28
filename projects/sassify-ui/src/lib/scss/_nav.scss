@@ -1,0 +1,126 @@
+@import "variables";
+
+.nav-left {
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.111);
+  background-color: var(--navleft-clr);
+  display: grid;
+  grid-template-rows: 60px calc(100vh - 160px) 100px;
+  z-index: 999;
+  font-family: var(--font-style);
+
+  .nl-set01 {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+
+    h3 {
+      font-size: var(--fontsize-medium);
+      color: var(--navleft-font-clr);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+    }
+  }
+
+  .nl-set02 {
+    padding: 28px 20px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+
+    .nl-link {
+      font-family: var(--font-family);
+      font-size: var(--fontsize-regular);
+      color: var(--navleft-font-clr);
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .nl-active {
+      background-color: var(--navleft-active-clr) !important;
+      color: var(--navleft-active-font) !important;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: #eaeaea;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: #888;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+      background: #707070;
+    }
+  }
+
+  .nl-set03 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2px;
+    padding: 18px;
+    background-color: var(--navleft-clr);
+
+    .nl-link {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      color: var(--navleft-font-clr);
+      font-size: var(--fontsize-regular);
+      font-family: var(--font-family);
+    }
+  }
+}
+
+.navleft-resize {
+  grid-template-columns: 70px 1fr !important;
+
+  .nav-left {
+    .nl-set01 {
+      justify-content: center;
+
+      h3 {
+        mat-icon {
+          font-size: 28px;
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+    .nl-set02 {
+      align-items: center;
+      padding: 28px 0px 20px 0px;
+
+      p {
+        mat-icon {
+          font-size: 28px;
+        }
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

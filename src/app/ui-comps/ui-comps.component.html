@@ -1,99 +1,29 @@
-<main class="app-components">
+<main
+  [ngClass]="
+    appHeaderProp !== 'UiCompsRoutin' && appSubHeaderProp !== 'Nav-Route'
+      ? 'app-components'
+      : ''
+  "
+>
   <section *ngIf="!hasChildRoute">
-    <div class="app-desc">
-      <h2>Components</h2>
-    </div>
     <div class="component-list grid-auto">
-      <section class="app-card" routerLink="Button-Route">
-        <div class="card-body">
-          <div class="comp-img">
-            <img
-              src="./assets/Button_img.svg"
-              alt="Button Img"
-              class="button-img"
-            />
+      <ng-container *ngFor="let data of appUiCompsList">
+        <section class="app-card" [routerLink]="data.routerLink">
+          <div class="card-body">
+            <div class="comp-img">
+              <img
+                [src]="data.img.path"
+                [alt]="data.img.alt"
+                [class]="data.img.class"
+              />
+            </div>
+            <div class="comp-desc">
+              <h3>{{ data.compDesc.h3 }}</h3>
+              <p>{{ data.compDesc.p }}</p>
+            </div>
           </div>
-          <div class="comp-desc">
-            <h3>Button</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              neque.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="app-card" routerLink="Card-Route">
-        <div class="card-body">
-          <div class="comp-img">
-            <img src="./assets/Card_img.svg" alt="Card Img" class="card-img" />
-          </div>
-          <div class="comp-desc">
-            <h3>Card</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              neque.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="app-card" routerLink="Dropdown-Route">
-        <div class="card-body">
-          <div class="comp-img">
-            <img
-              src="./assets/Dropdown_img.svg"
-              alt="Card Img"
-              class="dropdown-img"
-            />
-          </div>
-          <div class="comp-desc">
-            <h3>Dropdown</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              neque.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="app-card" routerLink="Inputs-Route">
-        <div class="card-body">
-          <div class="comp-img">
-            <img
-              src="./assets/Inputs_img.svg"
-              alt="Card Img"
-              class="inputs-img"
-            />
-          </div>
-          <div class="comp-desc">
-            <h3>Inputs</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              neque.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section class="app-card" routerLink="Table-Route">
-        <div class="card-body">
-          <div class="comp-img">
-            <img
-              src="./assets/Table_img.svg"
-              alt="Tablet Img"
-              class="table-img"
-            />
-          </div>
-          <div class="comp-desc">
-            <h3>Table</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam,
-              neque.
-            </p>
-          </div>
-        </div>
-      </section>
+        </section>
+      </ng-container>
     </div>
   </section>
 

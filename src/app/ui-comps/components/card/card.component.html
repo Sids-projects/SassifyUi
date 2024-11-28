@@ -98,7 +98,7 @@
   </ng-container>
 </section>
 
-<h2 class="comp-title margin-t">Bordered Card</h2>
+<h2 class="comp-title margin-t">Bordered Card Plain</h2>
 <section class="grid-auto-adjust">
   <div class="card-box card-fixed card-lines">
     <div class="card-head">
@@ -131,7 +131,10 @@
       </button>
     </div>
   </div>
+</section>
 
+<h2 class="comp-title margin-t">Bordered Card Coloured</h2>
+<section class="grid-auto-adjust">
   <ng-container *ngFor="let clr of colours">
     <div [class]="'card-box-' + clr + ' card-fixed' + ' card-lines-' + clr">
       <div class="card-head">

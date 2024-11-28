@@ -1,0 +1,109 @@
+@import "variables";
+
+.mat-typography h1,
+.mat-typography h2,
+.mat-typography h3,
+.mat-typography h4,
+.mat-typography h5,
+.mat-typography h6,
+.mat-typography p {
+  margin: 0;
+}
+
+.accordion-grup {
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+    rgba(0, 0, 0, 0.09) 0px 0px 0px 1px;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.accordion-main {
+  width: 100%;
+  border-top: 1px solid #e5e5e5 !important;
+  background-color: white;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--font-style);
+  overflow: hidden;
+
+  .acc-head {
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.07) 0px 0px 0px 1px;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 14px;
+
+    .acc-title {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 4px;
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      cursor: pointer;
+
+      h2 {
+        font-family: var(--font-family);
+        font-size: var(--fontsize-medium);
+        font-weight: var(--fontweight-medium);
+        text-transform: capitalize;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.8rem;
+
+        mat-icon {
+          font-size: 20px !important;
+        }
+      }
+
+      mat-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.5s ease;
+      }
+    }
+  }
+
+  .acc-body {
+    height: 0;
+    overflow: hidden;
+    transition: height 0.2s ease;
+    background-color: #fafafa;
+
+    .acc-content {
+      padding: 18px;
+
+      p {
+        font-family: var(--font-family);
+        font-size: var(--fontsize-regular);
+        line-height: var(--lineheight-regular);
+        color: #757575;
+      }
+    }
+  }
+
+  .state-arrow {
+    color: #a7a7a7 !important;
+    transition: transform 0.5s ease;
+  }
+
+  .state-arrow.open {
+    transform: rotate(180deg);
+  }
+}
+
+.acc-reg {
+  &:first-child {
+    border-top: none !important;
+  }
+}

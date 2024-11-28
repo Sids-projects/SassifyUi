@@ -1,0 +1,233 @@
+p,
+ul,
+ol {
+  font-family: "Pretty-neat" !important;
+}
+
+ul,
+ol {
+  padding: 0;
+  margin: 0;
+  color: #6c6c6c !important;
+}
+
+.app-customizer {
+  height: 100vh;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+
+  /* width */
+  &::-webkit-scrollbar {
+    width: 0.6rem;
+  }
+
+  /* Track */
+  &::-webkit-scrollbar-track {
+    background: #fbf3ce;
+    border-radius: 50px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background-color: #f2da69;
+    border-radius: 50px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #2d2d3b;
+  }
+
+  .app-01 {
+    height: 100vh;
+    background-color: white;
+    display: grid;
+    grid-template-rows: 1fr 7rem;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+    .content {
+      display: grid;
+      place-content: center;
+
+      h2 {
+        color: var(--theme-colour);
+        font-family: "Swung-note" !important;
+        font-size: 7.8rem;
+        line-height: 8rem;
+        font-weight: 700;
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 2.4rem;
+        position: relative;
+
+        &:before {
+          content: "your creative companion";
+          position: absolute;
+          top: -4px;
+          left: 6px;
+          color: transparent;
+          -webkit-text-stroke: 0.2rem var(--sub-theme-colour);
+          font-size: inherit;
+          line-height: 8rem;
+          font-weight: 700;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+
+      p {
+        color: #565656;
+        max-width: 65rem;
+        text-align: center;
+        line-height: 3rem;
+        font-size: 1.8rem;
+        letter-spacing: 0.1rem;
+        font-weight: 500;
+        margin-bottom: 1.8rem;
+      }
+
+      button {
+        font-family: "Sour Gummy", sans-serif;
+        border: none;
+        border-radius: 6px;
+        font-size: 1.8rem;
+        font-weight: 500;
+        width: 120px;
+        height: 40px;
+        color: #3b3b3b;
+        text-transform: uppercase;
+        margin: 0 auto;
+        padding: 0 0 4px 4px;
+      }
+
+      .selected {
+        &:before {
+          top: -6px !important;
+          left: 2px;
+        }
+      }
+    }
+
+    .footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+
+      p {
+        font-size: 1.6rem;
+        font-weight: 600;
+        color: #565656;
+      }
+
+      span {
+        color: #565656;
+      }
+    }
+  }
+
+  .app-02 {
+    z-index: 2;
+  }
+  .app-03 {
+    z-index: 3;
+  }
+  .app-04 {
+    z-index: 4;
+  }
+  .app-05 {
+    z-index: 5;
+  }
+  .app-06 {
+    z-index: 6;
+  }
+
+  .app-02,
+  .app-03,
+  .app-04,
+  .app-05,
+  .app-06 {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr;
+    background-color: white;
+    border-top: 0.4rem solid #f2da69;
+    position: sticky;
+    top: 0;
+    padding: 3rem;
+
+    .content {
+      display: grid;
+      grid-template-columns: 55rem 1fr;
+      align-items: center;
+      justify-content: center;
+      place-content: center;
+      margin-left: 3rem;
+
+      .set-content {
+        h2 {
+          font-family: "Sour Gummy", sans-serif;
+          text-transform: uppercase;
+          font-weight: 400;
+        }
+
+        .text-effect {
+          position: relative;
+          margin-bottom: 1rem;
+
+          h3 {
+            color: var(--theme-colour);
+            font-family: "Swung-note" !important;
+            font-size: 5.8rem;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 5.4rem;
+            letter-spacing: 0.3rem;
+            font-weight: 800;
+          }
+
+          .strock {
+            position: absolute;
+            top: -3px;
+            left: 3px;
+            color: transparent;
+            -webkit-text-stroke: 0.16rem var(--sub-theme-colour);
+          }
+        }
+
+        p {
+          font-size: 1.8rem;
+          line-height: 2.4rem;
+        }
+
+        ul {
+          font-size: 1.8rem;
+          line-height: 3rem;
+          margin-left: 2rem;
+        }
+      }
+
+      .set-img {
+        display: grid;
+        place-content: center;
+
+        img {
+          max-width: 60rem;
+          width: 100%;
+        }
+      }
+    }
+
+    .content-about {
+      .set-content {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+      }
+    }
+  }
+}

@@ -16,6 +16,11 @@ const routes: Routes = [
         (m) => m.TemplateSetModule
       ),
   },
+  {
+    path: 'CustomizerModule',
+    loadChildren: () =>
+      import('./customizer/customizer.module').then((m) => m.CustomizerModule),
+  },
 ];
 
 @NgModule({

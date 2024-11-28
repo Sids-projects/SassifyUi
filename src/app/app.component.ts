@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
         const currentRoute02 = event.urlAfterRedirects.split('/')[2];
         this.appHeaderProp = currentRoute01;
         this.appSubHeaderProp = currentRoute02;
-        console.log(this.appSubHeaderProp);
       }
     });
   }

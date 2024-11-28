@@ -1,7 +1,16 @@
 <main class="app">
-  <nav class="app-header">
+  <nav
+    class="app-header"
+    *ngIf="
+      appSubHeaderProp !== 'CusApp-Route' && appSubHeaderProp !== 'Nav-Route'
+    "
+  >
     <div class="container-01 selected">
-      <ng-container *ngIf="appSubHeaderProp === undefined">
+      <ng-container
+        *ngIf="
+          appSubHeaderProp === undefined || appSubHeaderProp === 'CusHome-Route'
+        "
+      >
         <a routerLink="" [ngClass]="appHeaderProp === '' ? 'active' : ''"
           ><span class="material-symbols-outlined"> home </span>
           <span>Home</span></a
@@ -14,16 +23,37 @@
           ><span class="material-symbols-outlined"> space_dashboard </span>
           <span>Templates</span></a
         >
+        <a routerLink="CustomizerRouting" routerLinkActive="active"
+          ><span class="material-symbols-outlined"> instant_mix </span>
+          <span>Customizer</span></a
+        >
       </ng-container>
+
+      <!-- Componenets & Templates -->
       <p
-        *ngIf="appSubHeaderProp !== undefined"
+        *ngIf="
+          appSubHeaderProp !== undefined && appSubHeaderProp !== 'CusHome-Route'
+        "
         class="scroll-arrow"
         (click)="scrollLeft()"
       >
         <span class="material-symbols-outlined"> chevron_left </span>
       </p>
-      <div *ngIf="appSubHeaderProp !== undefined" class="app-links" #scrollArea>
+      <div
+        *ngIf="
+          appSubHeaderProp !== undefined && appSubHeaderProp !== 'CusHome-Route'
+        "
+        class="app-links"
+        #scrollArea
+      >
         <div *ngIf="appHeaderProp === 'UiCompsRouting'" class="links-list">
+          <a
+            routerLink="UiCompsRouting/Accordion-Route"
+            routerLinkActive="active"
+          >
+            <span class="material-symbols-outlined"> unfold_more </span>
+            <span>Accordion</span>
+          </a>
           <a routerLink="UiCompsRouting/Button-Route" routerLinkActive="active">
             <span class="material-symbols-outlined"> buttons_alt </span>
             <span>Button</span>
@@ -43,22 +73,36 @@
             <span class="material-symbols-outlined"> draw </span>
             <span>Inputs</span>
           </a>
+          <a
+            routerLink="UiCompsRouting/MenuBar-Route"
+            routerLinkActive="active"
+          >
+            <span class="material-symbols-outlined"> widgets </span>
+            <span>Menu Bar</span>
+          </a>
+          <a routerLink="UiCompsRouting/Nav-Route" routerLinkActive="active">
+            <span class="material-symbols-outlined"> side_navigation </span>
+            <span>Navigation</span>
+          </a>
           <a routerLink="UiCompsRouting/Table-Route" routerLinkActive="active">
             <span class="material-symbols-outlined"> table </span>
             <span>Table</span>
           </a>
+          <a routerLink="UiCompsRouting/Tabs-Route" routerLinkActive="active">
+            <span class="material-symbols-outlined"> tab </span>
+            <span>Tabs</span>
+          </a>
         </div>
       </div>
       <p
-        *ngIf="appSubHeaderProp !== undefined"
+        *ngIf="
+          appSubHeaderProp !== undefined && appSubHeaderProp !== 'CusHome-Route'
+        "
         class="scroll-arrow"
         (click)="scrollRight()"
       >
         <span class="material-symbols-outlined"> chevron_right </span>
       </p>
-    </div>
-    <div class="container-02 selected">
-      <p><span class="material-symbols-outlined"> search </span></p>
     </div>
     <div class="container-02 selected">
       <img src="./assets/logo-vector.svg" alt="Product Logo" />
@@ -83,14 +127,10 @@
             <span class="material-symbols-outlined"> book </span>
             <span>Read Docs</span>
           </button>
-          <button
-            class="selected"
-            routerLink="UiCompsRouting"
-            routerLinkActive="active"
-          >
+          <a class="selected" routerLink="CustomizerRouting/CusHome-Route">
             <span class="material-symbols-outlined"> draw </span>
             <span>View Editor</span>
-          </button>
+          </a>
         </div>
         <div class="install-kit selected">
           <div>

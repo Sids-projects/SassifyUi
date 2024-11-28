@@ -69,6 +69,113 @@ export class SharedService {
     ],
   };
 
+  appUiCompsList: any = [
+    {
+      img: {
+        path: './assets/Accordion_img.svg',
+        alt: 'Button Img',
+        class: 'accordion-img',
+      },
+      compDesc: {
+        h3: 'Accordion',
+        p: 'Collapsible panels to organize content compactly.',
+      },
+      routerLink: 'Accordion-Route',
+    },
+    {
+      img: {
+        path: './assets/Button_img.svg',
+        alt: 'Button Img',
+        class: 'button-img',
+      },
+      compDesc: {
+        h3: 'Button',
+        p: 'Customizable buttons with various styles and states.',
+      },
+      routerLink: 'Button-Route',
+    },
+    {
+      img: {
+        path: './assets/Card_img.svg',
+        alt: 'Card Img',
+        class: 'card-img',
+      },
+      compDesc: {
+        h3: 'Card',
+        p: 'Flexible containers for images, titles, and descriptions.',
+      },
+      routerLink: 'Card-Route',
+    },
+    {
+      img: {
+        path: './assets/Dropdown_img.svg',
+        alt: 'Card Img',
+        class: 'dropdown-img',
+      },
+      compDesc: {
+        h3: 'Dropdown',
+        p: 'Toggleable menus for navigation or options.',
+      },
+      routerLink: 'Dropdown-Route',
+    },
+    {
+      img: {
+        path: './assets/Inputs_img.svg',
+        alt: 'Card Img',
+        class: 'inputs-img',
+      },
+      compDesc: {
+        h3: 'Inputs',
+        p: 'Styled input fields with focus and validation states.',
+      },
+      routerLink: 'Inputs-Route',
+    },
+    {
+      img: {
+        path: './assets/Menubar_img.svg',
+        alt: 'Menubar Img',
+        class: 'menubar-img',
+      },
+      compDesc: {
+        h3: 'Menu Bar',
+        p: 'Horizontal or vertical navigation menus.',
+      },
+      routerLink: 'MenuBar-Route',
+    },
+    {
+      img: { path: './assets/Nav_img.svg', alt: 'Nav Img', class: 'nav-img' },
+      compDesc: {
+        h3: 'Navigation',
+        p: 'Seamless navigation bars for linking sections.',
+      },
+      routerLink: 'Nav-Route',
+    },
+    {
+      img: {
+        path: './assets/Table_img.svg',
+        alt: 'Tablet Img',
+        class: 'table-img',
+      },
+      compDesc: {
+        h3: 'Table',
+        p: 'Styled tables for displaying tabular data.',
+      },
+      routerLink: 'Table-Route',
+    },
+    {
+      img: {
+        path: './assets/Tabs_img.svg',
+        alt: 'Tabs Img',
+        class: 'tabs-img',
+      },
+      compDesc: {
+        h3: 'Tabs',
+        p: 'Tabbed interfaces for organizing and switching content.',
+      },
+      routerLink: 'Tabs-Route',
+    },
+  ];
+
   tableSm: any = [
     { tr: ['1', 'Apple', 'Iphone 8', '10.08.2024', 'Battery Replacemeent'] },
   ];
