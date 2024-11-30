@@ -1,1 +1,9 @@
-
+.nav-container {
+  background-color: #fafafa;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-evenly;
+  gap: 10px;
+  overflow-x: scroll;
+}
